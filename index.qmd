@@ -1,0 +1,626 @@
+---
+title: "Epidemiologia de Doenças Infecciosas "
+subtitle: "Número R e a sua aplicação"
+author: 
+  name: A. Peralta-Santos
+  affiliation: 
+    - Escola Nacional de Saúde Pública
+date: today
+date-format: long
+format:
+  html:
+    embed-resources: true
+    smooth-scroll: true
+    toc: false
+    toc-location: left
+    number-sections: true
+    code-copy: true
+theme: cosmo
+output-dir: docs
+smooth-scroll: true
+lang: pt   
+---
+
+# Introdução às doenças infecciosas
+
+## Interação Hospedeiro-Agente-Ambiente e Fatores que Influenciam essa Interação
+
+**Tríade Hospedeiro-Agente-Ambiente**:
+
+-   **Hospedeiro (Host)**: a especie que manifesta a infeção ou doença.
+    -   **Exemplo**: No HIV/SIDA, o sistema imunológico humano é alvo do vírus.
+-   **Agente (Pathogen)**: O agente infeccioso (vírus, bactéria, fungo, parasita) que causa a doença.
+    -   **Exemplo**: Mycobacterium tuberculosis, a bactéria que causa tuberculose.
+-   **Ambiente (Environment)**: Fatores externos que afetam o hospedeiro e o patógeno.
+    -   **Exemplo**: A transmissão da malária é fortemente influenciada pela presença de água parada onde os mosquitos Anopheles se reproduzem.
+
+**Fatores que Influenciam a Interação**:
+
+-   **Fatores do Hospedeiro**:
+
+    -   **Genética (Genetic Makeup)**: Certas mutações genéticas podem proporcionar resistência a doenças (ex.: a mutação da anemia falciforme proporciona alguma resistência à malária).
+
+    -   **Estado Imunológico (Immune Status)**: Indivíduos imunocomprometidos, como aqueles com HIV, são mais suscetíveis a infecções oportunistas.
+
+    -   **Idade (Age)**: Bebês e idosos são geralmente mais vulneráveis a infecções devido a sistemas imunológicos mais fracos.
+
+    -   **Sexo (Sex)**: Algumas doenças mostram prevalência específica por sexo (ex.: infecções do trato urinário são mais comuns em mulheres).
+
+    -   **Nutrição (Nutrition)**: A desnutrição pode enfraquecer o sistema imunológico, tornando os indivíduos mais suscetíveis a infecções como o sarampo.
+
+    -   **Comorbidades (Comorbidities)**: Condições como diabetes podem predispor indivíduos a infecções como infecções bacterianas da pele.
+
+-   **Fatores do Agente**:
+
+    -   **Virulência (Virulence)**: A capacidade de um agente causar doença grave (ex.: o vírus Ebola tem alta virulência).
+
+    -   **Dose (Dose)**: A quantidade de agente necessária para causar infecção (ex.: uma dose alta de bactérias do cólera é necessária para causar a doença).
+
+    -   **Via de Entrada (Route of Entry)**: O caminho através do qual o patógeno entra no hospedeiro (ex.: trato respiratório para a gripe).
+
+    -   **Adaptabilidade (Adaptability)**: Capacidade do agente de mutar e resistir ao tratamento (ex.: bactérias resistentes a antibióticos, alterações antigenicas do virus da gripe ou SARS-CoV-2).
+
+### Tipos de agente
+
+| Tipo de agente | Características                                                                                                                                                         | Exemplos                                                                                                      |
+|------------------|------------------------------------|------------------|
+| Microparasitas | Virus - Pequenos, simples, parasitas obrigatórios de células maiores                                                                                                    | Sarampo, caxumba, rubéola, varíola, síndrome respiratória aguda grave (SARS), influenza                       |
+|                | Bactérias - Maiores e mais complexas que vírus—muitas são capazes de crescer independentemente, mas algumas requerem uma célula hospedeira                              | Bordetella pertussis (coqueluche), Mycobacterium tuberculosis (tuberculose), Salmonella typhi (febre tifóide) |
+|                | Protozoários - Organismos unicelulares maiores, mais complexos que bactérias—muitos são capazes de crescer independentemente, mas alguns requerem uma célula hospedeira | Plasmodium falciparum (malária); Entamoeba histolytica (disenteria)                                           |
+| Macroparasitas | Helmintos (vermes) - Organismos multicelulares grandes (1mm a 10m)                                                                                                      | Schistosoma mansoni (esquistossomose)                                                                         |
+|                | Artrópodes - Insetos, piolhos, carrapatos e seus parentes                                                                                                               | Ixodes spp (carrapatos)                                                                                       |
+
+### Tipo de transmissão e dinamica de transmissão
+
+**Modos de Transmissão**:
+
+-   **Transmissão Direta (Direct Transmission)**: Contato pessoa a pessoa, disseminação por gotículas.
+    -   **Exemplo**: A gripe é transmitida por gotículas de tosse e espirro.
+-   **Transmissão Indireta (Indirect Transmission)**: Via intermediários como vetores.
+    -   **Exemplo**: A malária é transmitida por vetores mosquitos.
+
+**Tipos de Dinamicas de transmissão de Doenças Infecciosas**:
+
+-   **Endêmica (Endemic)**: Presença constante dentro de uma área geográfica.
+
+    -   **Exemplo**: A malária é endêmica em muitas partes da África Subsaariana.
+
+-   **Epidemia (Epidemic)**: Um aumento nos casos acima do normal esperado.
+
+    -   **Exemplo**: O surto de Ebola na África Ocidental em 2014-2016.
+
+-   **Pandemia (Pandemic)**: Disseminação mundial de uma nova doença.
+
+    -   **Exemplo**: Pandemia de COVID-19.
+
+### História Natural das Doenças Infecciosas
+
+![](incubacao.png)
+
+**Estágios da Doença**:
+
+-   **Período de Incubação (Incubation Period)**: Tempo entre a exposição e o início dos sintomas.
+    -   **Exemplo**: O período de incubação do sarampo é tipicamente de 10-14 dias.
+-   **Período prodromico (Prodromal Period)**: Sintomas iniciais, não específicos.
+    -   **Exemplo**: A fase prodromica da varicela inclui febre e mal-estar antes do aparecimento da erupção cutânea.
+-   **Fase Aguda (Acute Phase)**: Sintomas específicos manifestam-se.
+    -   **Exemplo**: A fase aguda da dengue inclui febre alta, dor de cabeça severa e dor nas articulações.
+-   **Convalescença (Convalescence)**: Fase de recuperação.
+    -   **Exemplo**: A fase de convalescença da hepatite B envolve uma melhora gradual nos sintomas e retorno à função hepática normal.
+
+**Resultados da Infecção**:
+
+-   **Recuperação (Recovery)**: Resolução completa dos sintomas.
+    -   **Exemplo**: A maioria das pessoas se recupera completamente da gripe em duas semanas.
+-   **Infecção Crónica (Chronic Infection)**: Infecção persistente com possíveis sintomas periódicos.
+    -   **Exemplo**: A hepatite C pode levar a uma doença hepática crônica.
+-   **Infecção Latente (Latent Infection)**: Patógeno dormente com potencial de reativação.
+    -   **Exemplo**: O vírus Varicela-zoster pode permanecer latente e reativar-se como herpes zoster.
+-   **Estado de Portador (Carrier State)**: Assintomático, mas capaz de transmitir.
+    -   **Exemplo**: Portadores de febre tifóide podem excretar Salmonella Typhi sem sintomas.
+
+### Papel dos Mecanismos de Transmissão no Controle e Prevenção de Doenças
+
+**Mecanismos de Transmissão**:
+
+-   **Aérea (Airborne)**: Gotículas, controle de ventilação.
+
+    -   **Exemplo**: A transmissão da TB pode ser reduzida melhorando a ventilação em ambientes de saúde.
+
+-   **Vetorial (Vector-Borne)**: Mosquitos; estratégias de controle de vetores.
+
+    -   **Exemplo**: Uso de redes de cama tratadas com inseticida para prevenir a malária.
+
+-   **Hídrica (Waterborne)**: Água contaminada; melhorias no saneamento.
+
+    -   **Exemplo**: Prevenção do cólera através do fornecimento de água e saneamento melhorados.
+
+-   **Transmissão por Alimentos (Foodborne)**: Alimentos contaminados; protocolos de segurança alimentar.
+
+    -   **Exemplo**: Prevenção de infecções por salmonela através da manipulação e cozimento adequados dos alimentos.
+
+-   **Transmissão por Contato (Contact Transmission)**: Isolamento, higiene das mãos.
+
+    -   **Exemplo**: Redução da transmissão de MRSA em hospitais através da higiene rigorosa das mãos e precauções de contato.
+
+# Introdução ao Número R
+
+## O que é o Número R?
+
+O número R representa o número médio de infecções secundárias produzidas por um único indivíduo infectado em uma população totalmente suscetível. Ele é crucial para prever a propagação de doenças infecciosas.
+
+A epidemia está se expandindo se R \> 1 e se contraindo se R \< 1.
+
+Existem várias definições de R, que afetam seu valor estimado e interpretação.
+
+Diferentes métodos estatísticos e a disponibilidade de dados podem influenciar as estimativas de R.
+
+### Distinção entre ( R_0 ) e ( R_t )
+
+**( R_0 )**: Número básico de reprodução - o número médio de casos secundários produzidos por uma única infecção em uma população totalmente suscetível.
+
+**( R_t )**: Número de reprodução efetivo - o número médio de casos secundários em um determinado momento ( t ), considerando o estado atual de imunidade da população e as medidas de intervenção. As estimativas de Rt podem ser estáveis em grandes surtos estabelecidos, mas variam com mudanças nas intervenções e níveis de imunidade. Alta variabilidade e heterogeneidade em níveis de baixa prevalência podem tornar Rt menos confiável.
+
+## Importancia do Número R
+
+O número R ajuda a prever a potencial propagação de uma doença infecciosa e a orientar as intervenções de saúde pública para controlar surtos, reduzindo ( R ) abaixo de 1.
+
+## Fatores 
+
+O número R é influenciado por:
+
+-   Taxa de transmissão ( $\beta$ )
+
+-   Taxa de contato ( k )
+
+-   Duração da infecciosidade ( D )
+
+-   Imunidade da população
+
+# Calcular o Número R
+
+## Estrutura Matemática
+
+A fórmula básica para ( R_0 ) é:
+
+$$ R_0 = \beta \times k \times D $$
+
+### Cálculo de Exemplo
+
+Considere valores hipotéticos:
+
+-   Probabilidade de transmissão por contato (( $\beta$ )): 0.1
+
+-   Número de contatos por unidade de tempo (( k )): 10
+
+-   Duração da infecciosidade (( D )): 5 dias
+
+```{r}
+# Example calculation of R0
+beta <- 0.1
+k <- 10
+D <- 5
+
+R0 <- beta * k * D
+R0
+```
+
+Qual seria o Número de Infectados depois de 3 gerações de casos com R0 de 5?
+
+#### O R e o processo de infecção
+
+As definições do número de reprodução devem levar em consideração a heterogeneidade da população e a estrutura de contato.
+
+Modelos de população estruturada (doméstico, multi-tipo, rede, modelos espaciais) capturam diferentes padrões de contato e transmissão.
+
+Modelos domiciliares, transmissão entre grupos e modelos de rede oferecem diferentes insights sobre os valores de R.
+
+#### Número R, vacinação e imunidade de grupo
+
+-   À medida que a imunidade aumenta, Rt diminui, atingindo a imunidade de grupo quando Rt \< 1 sem intervenções adicionais.
+
+-   A vacinação visa alcançar a imunidade de grupo reduzindo o número de suscetíveis.
+
+-   Os limiares críticos de vacinação dependem de R0 e da estrutura da população.
+
+-   As estratégias de vacinação ideais devem considerar a heterogeneidade da população e as prioridades de saúde pública.
+
+#### Dados usados para estimar R
+
+Idealmente, Rt deve ser estimado a partir do total de infecções incidentes, mas os dados práticos frequentemente apresentam atrasos.
+
+Ajustes para atrasos na observação e vieses temporais são necessários.
+
+Diferentes fluxos de dados (casos, hospitalizações, mortes) oferecem vantagens e limitações variadas.
+
+A estimativa requer equilibrar a relação sinal-ruído e a sensibilidade a mudanças repentinas na transmissão.
+
+### Estimando ( R_t )
+
+Podemos estimar ( R_t ) usando dados epidemiológicos por meio de métodos como análise de séries temporais e inferência Bayesiana.
+
+```{r}
+# Simulated data for R_t estimation
+time <- 1:30
+Rt <- 2 * exp(-0.1 * time)
+
+plot(time, Rt, type = "l", col = "blue", lwd = 2,
+     xlab = "Time (days)", ylab = expression(R[t]),
+     main = "Change in R_t Over Time")
+abline(h = 1, col = "red", lty = 2)
+```
+
+## Como o número de contatos afeta o Rt
+
+A análise de sensibilidade ajuda a entender como as mudanças nos parâmetros (por exemplo, taxa de contato, probabilidade de transmissão) afetam o número R.
+
+```{r}
+# Sensitivity analysis
+contact_rate <- seq(5, 15, by = 1)
+R_sensitivity <- beta * contact_rate * D
+
+plot(contact_rate, 
+     R_sensitivity, 
+     type = "l", col = "green", lwd = 2,
+     xlab = "Contact Rate (k)", ylab = expression(R),
+     main = "Sensitivity Analysis of R")
+abline(h = R0, col = "red", lty = 2)
+```
+
+## Matriz de Contatos
+
+O estudo fornece matrizes de contato que podem ser usadas para entender os padrões de interação entre diferentes faixas etárias.
+
+```{r}
+library(Matrix)
+library(ggplot2)
+library(reshape2)
+
+# Example contact matrix based on CoMix study
+contact_matrix <- matrix(c(
+  11, 3, 1, 1,
+  2, 8, 6, 4,
+  3, 4, 2, 4,
+  3, 3, 5, 8
+), nrow = 4, byrow = TRUE)
+
+# Age groups corresponding to the matrix
+age_groups <- c("0-17", "18-49", "50-64", "65+")
+
+# Convert matrix to a dataframe for ggplot
+contact_df <- melt(contact_matrix)
+colnames(contact_df) <- c("AgeGroup1", "AgeGroup2", "Contacts")
+contact_df$AgeGroup1 <- factor(contact_df$AgeGroup1, labels = age_groups)
+contact_df$AgeGroup2 <- factor(contact_df$AgeGroup2, labels = age_groups)
+
+# Plot the contact matrix
+ggplot(contact_df, aes(x = AgeGroup2, y = AgeGroup1, fill = Contacts)) +
+  geom_tile(color = "white") +
+  scale_fill_gradient(low = "lightblue", high = "darkblue") +
+  theme_minimal() +
+  labs(title = "Contact Matrix Based on CoMix Study",
+       x = "Age Group",
+       y = "Age Group",
+       fill = "Contacts per Person") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+## Vacinação e o Número R
+
+**Limite da Imunidade de Grupo:**
+
+A vacinação de uma proporção uniformemente escolhida aleatoriamente
+
+$$1 - \frac{1}{R0}$$
+
+da população é suficiente para criar imunidade de grupo e prevenir uma epidemia, desde que a imunidade induzida pela vacina seja suficientemente duradoura.
+
+**Cálculos Simples de Exemplo:**
+
+Se (R0 = 2), então 50% da população precisa ser vacinada ou estar imune para prevenir surtos.
+
+$$1 - \frac{1}{2}$$ $$0.5= 50%$$
+
+Se (R0 = 3), como é aproximadamente o caso da COVID-19, então 67% da população precisa ser vacinada ou imune.
+
+$$1 - \frac{1}{3}$$ $$0.67= 67%$$
+
+**Imunossenescência**
+
+Ao definir metas de vacinação, a imunossenescência deve ser levada em consideração. Por exemplo, se a imunidade proporcionada por uma vacina diminui ao longo do tempo, doses de reforço podem ser necessárias para manter a imunidade de grupo
+
+**Impacto do Momento da Vacinação**
+
+A implementação e o impacto de um programa de vacinação dependem de se a vacinação é realizada antes ou durante um surto:
+
+**Antes de um Surto:** Prevê a ocorrência do surto ou reduz significativamente sua propagação.
+
+Exemplo: Campanhas de vacinação contra a poliomielite que visam manter altos níveis de imunidade na população para prevenir surtos.
+
+**Durante um Surto:** Ajuda a controlar e eventualmente parar a propagação da doença.
+
+Exemplo: O rápido desenvolvimento e distribuição de vacinas contra a COVID-19 durante a pandemia para reduzir a transmissão e a gravidade da doença.
+
+**Considerações Adicionais:**
+
+Estrutura Populacional: A eficácia de se alcançar a imunidade de grupo pode variar com base na estrutura populacional e nos padrões de contato. Por exemplo, a vacinação direcionada a grupos de alto contato pode ser mais eficaz.
+
+Exemplo: Priorização de profissionais de saúde e populações idosas durante a campanha de vacinação contra a COVID-19.
+
+Cobertura e Hesitação vacinal: Alcançar a cobertura vacinal necessária exige abordar a hesitação vacinal e garantir o acesso equitativo às vacinas.
+
+Exemplo: Campanhas de saúde pública para educar e encorajar a adesão à vacinação entre grupos hesitantes.
+
+**Exemplos do Mundo Real:**
+
+**Sarampo:** O sarampo tem um R0 alto de cerca de 12-18, o que significa que mais de 95% da população precisa ser vacinada para alcançar a imunidade de grupo. Esforços de vacinação contínuos visam manter esse nível para prevenir surtos.
+
+**Gripe:** Programas de vacinação contra a gripe sazonal visam vacinar populações vulneráveis a cada ano para mitigar o impacto dos surtos anuais, considerando a variação na eficácia e nas taxas de cobertura.
+
+## Aplicação Prática e Discussão
+
+epiparameter é um pacote R que contém uma biblioteca de parâmetros epidemiológicos para doenças infecciosas e um conjunto de classes e funções auxiliares para trabalhar com os dados. Também inclui funções para extrair e converter parâmetros de estatísticas resumidas relatadas. [link para o epiparameter](https://epiverse-trace.github.io/epiparameter/)
+
+Lista de distribuições epidemiológicas:
+
+"all"
+
+"incubation period"
+
+"onset to hospitalisation"
+
+"onset to death"
+
+"serial interval"
+
+"generation time"
+
+"offspring distribution"
+
+"hospitalisation to death"
+
+"hospitalisation to discharge"
+
+"notification to death"
+
+"notification to discharge"
+
+"onset to discharge"
+
+"onset to ventilation"
+
+```{r}
+# check whether {pak} is installed
+if(!require("pak")) install.packages("pak")
+pak::pak("epiverse-trace/epiparameter")
+```
+
+```{r}
+library(epiparameter)
+```
+
+```{r}
+epidists <- epidist_db()
+
+```
+
+```{r}
+influenza_generation <- epidist_db(
+  disease = "influenza",
+  epi_dist = "generation time",
+  single_epidist = TRUE
+)
+plot(influenza_generation)
+```
+
+```{r}
+covid_incubation <- epidist_db(
+  disease = "covid",
+  epi_dist = "incubation period",
+  single_epidist = TRUE
+)
+covid_incubation
+plot(covid_incubation)
+```
+
+## Exemplo de Geração de Rt
+
+Com base nos casos de gripe no Reino Unido
+
+```{r}
+library(EpiEstim)
+library(readr)
+library(ggplot2)
+```
+
+```{r}
+
+## load data
+data(Flu2009)
+## incidence:
+head(Flu2009$incidence)
+## serial interval (SI) distribution:
+Flu2009$si_distr
+## interval-ceonsored serial interval data:
+## each line represents a transmission event, 
+## EL/ER show the lower/upper bound of the symptoms onset date in the infector
+## SL/SR show the same for the secondary case
+## type has entries 0 corresponding to doubly interval-censored data
+## (see Reich et al. Statist. Med. 2009).
+head(Flu2009$si_data)
+```
+
+```{r}
+res_parametric_si <- estimate_R(Flu2009$incidence, 
+                                method="parametric_si",
+                                config = make_config(list(
+                                  mean_si = 2.6, 
+                                  std_si = 1.5))
+)
+
+head(res_parametric_si$R)
+```
+
+```{r}
+plot(res_parametric_si, legend = FALSE)
+```
+
+# Modelos
+
+*Fonte: An Introduction to Infectious Disease Modelling, Richard White, 2015*
+
+> All models are wrong, some are usefull
+
+Os modelos começam com uma descrição (simples) do assunto em estudo e passam a descrever os elementos essenciais que determinam o comportamento na vida real.
+
+A oportunidade que os modelos oferecem para analisar um assunto complexo é em si um dos benefícios importantes de uma abordagem de modelagem - o modelo torna-se, na verdade, uma estrutura lógica que imita o mundo real.
+
+Se este processo for considerado com cuidado e as características mais importantes do fenómeno forem conhecidas, então o modelo poderá fornecer uma representação realista do mundo real.
+
+Se o modelo acabar por não se comportar como o mundo real, então isto é uma prova de que os seus pressupostos básicos estavam errados ou insuficientes de alguma forma importante ou que algo se alterou nos presupostos.
+
+## Questões relevantes a considerar
+
+Ao desenvolver um modelo, é importante começar com as principais características da epidemiologia da infecção, tais como:
+
+1.  Qual é o período pré-infeccioso (o período de tempo entre a infecção e o início da infecciosidade, muitas vezes chamado de período “latente”) ?
+
+2.  Durante quanto tempo os indivíduos são normalmente infecciosos?
+
+3.  Qual é o número básico de reprodução?
+
+4.  Todos os grupos etários (ou outros grupos sociais) são igualmente afectados pela infecção?
+
+Existem três considerações principais ao considerar a estrutura do modelo:
+
+**A história natural da infecção.**
+
+**A precisão e o período de tempo durante os quais as previsões do modelo são necessárias.**
+
+**A pergunta de investigação**
+
+## Tipos de modelos 
+
+![](models.png)
+
+Os modelos podem ser determinísticos ou estocásticos.
+
+Os modelos determinísticos descrevem o que acontece “em média” numa população. Nesses
+modelos, os parâmetros de entrada (por exemplo, a taxa de início da doença ou a taxa de recuperação das pessoas) são fixos e, portanto, as previsões do modelo, como o número de casos
+que serão vistos ao longo do tempo, são 'pré-determinados'.
+
+Os modelos estocásticos, por outro lado, permitem que o número de indivíduos que se movem
+entre os compartimentos varia ao acaso, por exemplo, a taxa à qual as pessoas são infectadas ou os indivíduos infecciosos recuperam da doença pode variar aleatoriamente.
+
+## Modelos SIR
+
+O modelo SIR é um dos modelos mais simples e fundamentais na epidemiologia matemática.
+
+Ele é usado para descrever a propagação de doenças infecciosas em uma população. SIR é um acrônimo para **Susceptible-Infectious-Recovered** (Suscetíveis-Infectados-Recuperados), os três compartimentos principais do modelo. A ideia é dividir a população em três grupos (ou compartimentos):
+
+1.  **Suscetíveis (S)**: Indivíduos que ainda não foram infectados pela doença e são vulneráveis à infecção.
+2.  **Infectados (I)**: Indivíduos que estão atualmente infectados e podem transmitir a doença aos suscetíveis.
+3.  **Recuperados (R)**: Indivíduos que já foram infectados, se recuperaram e agora são imunes à reinfecção.
+
+
+
+| Termos | Equações Diferenciais |
+|-----------------------|-----------------------|
+| \( S_t \) O número de indivíduos suscetíveis no tempo \( t \) | $\frac{dS(t)}{dt}$ A taxa de variação no número de indivíduos suscetíveis no tempo \( t \) |
+| \( I_t \) O número de indivíduos infecciosos no tempo \( t \) | $\frac{dI(t)}{dt}$ A taxa de variação no número de indivíduos infecciosos no tempo \( t \) |
+| \( R_t \) O número de indivíduos recuperados (imunes) no tempo \( t \) | $\frac{dR(t)}{dt}$ A taxa de variação no número de indivíduos recuperados (imunes) no tempo \( t \) |
+| \( \lambda_t \) O risco de um indivíduo suscetível tornar-se infectado entre o tempo \( t \) e \( t+1 \) | \(\lambda(t)\) A taxa na qual indivíduos suscetíveis tornam-se infectados por unidade de tempo, no tempo \( t \) 
+
+
+### Equações Diferenciais do Modelo SIR
+
+As mudanças nas populações desses três grupos ao longo do tempo são descritas por um sistema de equações diferenciais ordinárias (EDOs):
+
+1.  $\frac{dS}{dt} = -\beta \frac{IS}{N}$: A taxa de mudança na população suscetível. A diminuição é proporcional ao produto de indivíduos suscetíveis e infectados, modulado pela taxa de transmissão $\beta$.
+
+2.  $\frac{dI}{dt} = \beta \frac{IS}{N} - \gamma I$: A taxa de mudança na população infectada. O aumento é proporcional ao número de contatos infecciosos $\beta \frac{IS}{N}$, enquanto a diminuição é proporcional à recuperação dos infectados $\gamma I$.
+
+3.  $\frac{dR}{dt} = \gamma I$: A taxa de mudança na população recuperada. Esta aumenta conforme os indivíduos infectados se recuperam, modulado pela taxa de recuperação $\gamma$.
+
+![](sir_model_1.png)
+
+### Parâmetros do Modelo
+
+-   $\beta$: Taxa de transmissão, ou seja, a probabilidade de que um contato entre um suscetível e um infectado resulte em uma nova infecção.
+
+-   $\gamma$: Taxa de recuperação, ou seja, a fração de infectados que se recupera por unidade de tempo (por exemplo, por dia). O inverso de $\gamma$ é o período infeccioso médio.
+
+### Aplicação do Modelo
+
+O modelo SIR pode ser aplicado para prever o curso de uma epidemia e entender os efeitos de intervenções como a vacinação. A vacinação reduz o número de indivíduos suscetíveis ((S)), influenciando diretamente na propagação da doença.
+
+### Simulação em R
+
+Agora, vamos criar uma simulação do modelo SIR em R usando o pacote `deSolve` para resolver as equações diferenciais, e `ggplot2` para visualizar o tamanho final da epidemia em diferentes cenários de vacinação (0%, 60%, e 95%).
+
+### Exemplo 1
+
+```{r}
+library(deSolve)
+library(ggplot2)
+
+# Parâmetros
+N <- 10000000  # População total Portuguesa
+I0 <- 1  # Número inicial de indivíduos infectados
+R0 <- 0  # Número inicial de indivíduos recuperados
+beta <- 2.14  # Taxa de transmissão
+gamma <- 1/7  # Taxa de recuperação (1/7 dias)
+days <- 160  # Duração da simulação em dias
+
+# Função do modelo SIR
+sir_model <- function(time, state, parameters) {
+  with(as.list(c(state, parameters)), {
+    dS <- -beta * S * I / N
+    dI <- beta * S * I / N - gamma * I
+    dR <- gamma * I
+    list(c(dS, dI, dR))
+  })
+}
+
+# Condições iniciais
+initial_conditions_naive <- c(S = N - I0 - R0, I = I0, R = R0)
+initial_conditions_60_vacc <- c(S = (1 - 0.6) * N - I0, I = I0, R = R0)
+initial_conditions_95_vacc <- c(S = (1 - 0.95) * N - I0, I = I0, R = R0)
+
+# Parâmetros do modelo
+parameters <- c(beta = beta, gamma = gamma)
+
+# Grid de tempo
+times <- seq(0, days, by = 1)
+
+# Soluções do modelo SIR
+solution_naive <- as.data.frame(ode(y = initial_conditions_naive, times = times, func = sir_model, parms = parameters))
+solution_60_vacc <- as.data.frame(ode(y = initial_conditions_60_vacc, times = times, func = sir_model, parms = parameters))
+solution_95_vacc <- as.data.frame(ode(y = initial_conditions_95_vacc, times = times, func = sir_model, parms = parameters))
+
+# Adicionar coluna de cenário
+solution_naive$scenario <- "0% Vacinação"
+solution_60_vacc$scenario <- "60% Vacinação"
+solution_95_vacc$scenario <- "95% Vacinação"
+
+# Combinar os dados
+solution <- rbind(solution_naive, solution_60_vacc, solution_95_vacc)
+
+```
+
+```{r}
+# Plot dos resultados
+ggplot(solution, aes(x = time, y = I, color = scenario)) +
+  geom_line(size = 1) +
+  scale_y_continuous(labels = scales::comma) +
+  labs(title = "Tamanho Final da Epidemia de Sarampo",
+       x = "Dias",
+       y = "Número de Infectados",
+       color = "Cenário de Vacinação") +
+  theme_minimal()
+```
+
+Neste código, simulamos a evolução da epidemia de sarampo em uma população de 10.000.000 de pessoas sob três cenários diferentes de cobertura vacinal: sem vacinação, 60% de cobertura e 95% de cobertura. Utilizamos o pacote `deSolve` para resolver as equações diferenciais e o `ggplot2` para visualizar os resultados.
+
+
+
